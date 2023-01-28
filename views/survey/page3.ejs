@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/images/logo.png" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/css.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <title>CSI</title>
+</head>
+
+<body style="font-family: 'Roboto', sans-serif;">
+    <!-- Main content here -->
+    <div class="flex-1 lg:p-10 p-2 text-2xl font-bold">
+
+        <!-- Content here -->
+        <div class="lg:p-4 bg-white mt-5 lg:rounded-lg rounded-t-3xl">
+
+            <div class="bg-gray-200 defaultLightColor rounded-t-3xl">
+                <!-- Logo and Company description -->
+                <div class="pt-2 ">
+                    <img class="h-24 w-24 border defaultBorderRadius bg-white my-2 m-auto" src="/images/logo.png">
+                    <div class="lg:w-2/3 m-auto bg-white text-center lg:rounded-t-3xl py-10 px-2">
+                        <p class="lg:text-2xl text-lg">GHANA CUSTOMER SERVICE INDEX SURVEY 2022</p>
+                        <p class="text-base">Multi-sector Survey on Customer Service Experience in Nigeria </p>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-gray-100  pb-10">
+                <!-- Question Container here -->
+                <div class="lg:w-2/3 bg-gray-50 m-auto">
+
+                    <!-- Sector titles -->
+                    <div class="lg:p-10 p-3">
+                        <p class="text-gray-800 text-center">SECTORS OF ORGANIZATIONS</p>
+                        <small class="text-sm">A minimum of 30 responses is required for a company to be featured in the
+                            Index, and one can complete the survey for as many sectors as possible. A maximum of five
+                            (5) is, however, recommended.</small>
+                    </div>
+
+                    <!-- All Questions -->
+                    <form action="/survey/page4" method="post">
+                        <div class="bg-white">
+                            <!-- Question -->
+                            <div class="my-4">
+                                <div class="border-l-2 border-orange-400 p-5 lg:pl-10 ">
+                                    <p class="text-base">
+                                        <%= third.question %> SINGLE RESPONSE <span class="text-red-600">*</span>
+                                    </p>
+                                    <!-- answers -->
+                                    <div class="my-2">
+                                        <% third.answers.forEach(element=> { %>
+                                            <div class="flex items-center mb-4">
+                                                <input class="mr-1" type="radio" name="radio"
+                                                    value="<%=element.value %>" required >
+                                                <label for="default-radio-1" class="ml-2 text-sm font-medium text-gray-900">
+                                                    <%= element.label %>
+                                                </label>
+                                            </div>
+                                            <% }) %>
+                                            <input class="mr-1" type="text" name="sectorId"
+                                            value='<%= sectorId%>' required hidden>
+                                            <input class="mr-1" type="text" name="subSectorId"
+                                            value='<%= subSectorId%>' hidden>
+                                    </div>
+                                    <!-- End answers -->
+                                </div>
+                            </div>
+                            <!-- End Question -->
+
+                            <!-- Buttons -->
+                            <div class="text-center space-x-5 py-5 ">
+                                <button onclick="history.back()" class="px-3 py-2 rounded text-base bg-orange-500">Previous</button>
+                                <button type="submit" class="px-3 py-2 rounded text-base bg-orange-500">Next</button>
+                            </div>
+                        </div>
+                    </form>
+                    <!-- End All Questions -->
+                </div>
+            </div>
+
+            <div class=" defaultLightColor rounded-b-3xl py-4">
+                <!-- Logo and Company description -->
+                <div class="pt-2 text-base text-center">
+                    <p>© Nigeria Customer Service Index. All Rights Reserved</p>
+                    <p>Powered By: WeWrite Technologies</p>
+                </div>
+            </div>
+        </div>
+        <!-- end Content here -->
+
+
+    </div>
+    <script>
+        var customInput = document.getElementById('customInput');
+        var otherInput = document.getElementById('otherInput');
+        var radioBtn = document.getElementsByName('radio');
+        var acceptBtn = document.getElementById('acceptBtn');
+        // console.log('checkboxes :>> ', radioBtn );
+
+
+        console.log('radioBtn.checked :>> ', radioBtn[2].checked);
+        for (var i = 0; i < radioBtn.length; i++) {
+            console.log(i)
+
+            radioBtn[i].addEventListener('change', (e) => {
+
+                var value = e.target.value;
+                console.log('change :>> ', value);
+                localStorage.setItem('q3', value);
+            })
+        }
+
+        // acceptBtn.addEventListener('click', () => {
+        //     if (otherInput.value.length !== 0) {
+        //         acceptBtn.disabled = true;
+        //         acceptBtn.innerHTML = 'Accepted'
+        //         console.log('accepted')
+        //     }
+        // })
+
+        // otherInput.addEventListener('change', () => {
+        //     acceptBtn.disabled = false;
+        //     acceptBtn.innerHTML = 'Add'
+        //     console.log('add')
+
+        // })
+
+
+
+    </script>
+</body>
+
+</html>

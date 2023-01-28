@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="shortcut icon" href="/images/logo.png" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="/css.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <title>NCSI-Login</title>
+</head>
+<body style="font-family: 'Roboto', sans-serif;" class="bg-gray-100">
+   
+    <div class="w-80 mx-auto my-20 bg-white shadow-lg rounded-xl">
+        <div class="bg-gray-200 defaultLightColor rounded-t-xl mb-4">
+            <!-- Logo and Company description -->
+            <div class="pt-4 pb-4">
+                <img class="h-24 w-24 border defaultBorderRadius bg-white m-auto" src="/images/logo.png"> 
+            </div>
+        </div>
+
+        <% if (!error) { %>
+            <div class="my-5">
+                <p>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-20 w-20 icon-svg m-auto" fill="none" viewBox="0 0 24 24" stroke="green" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                </p>
+                <p class="text-center text-lg">Success <span class="font-bold text-green-700">Message</span></p>
+                <p class="text-center text-2xl font-bold text-green-700"><%=message%></p>
+            </div>
+        <% }else{%>
+                <div class="my-5">
+                    <p>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="red" class="h-20 w-20 icon-svg m-auto" >
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                          </svg>
+                          
+                    </p>
+                    <p class="text-center text-lg">Error <span class="font-bold text-red-700">Message</span></p>
+                    <p class="text-center text-2xl font-bold text-red-600"><%=message%></p>
+                </div>
+        <%} %>
+       
+
+
+
+        <div class="py-5 text-center">
+            <a href="/<%=redirectLink%>" class="p-3 bg-gray-800 text-white hover:bg-black rounded-lg duration-200">Go Back</a>
+        </div>
+       
+        <!-- <a href="#" class="text-center block text-green-700  font-bold hover:text-green-900">NCSI homepage</a> -->
+        <div class="pb-3 text-sm text-center px-2 ">
+            <p>© Nigeria Customer Service Index.</p>
+            <p> All Rights Reserved</p>
+            <p>Powered By: WeWrite Technologies</p>
+        </div>
+    </div>
+    
+</body>
+</html>

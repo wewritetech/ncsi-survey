@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <!-- <script src="/public/js/jquery.sortable.js"></script> -->
+    <!-- <script>
+        $(function() {
+            $('.sortable').sortable();
+        });
+    </script> -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <title>Dashboard</title>
+</head>
+<body style="font-family: 'Roboto', sans-serif;" class="bg-gray-100">
+    <div class="relative min-h-screen md:flex">
+        <!-- mobile menu bar -->
+        <div class="md:hidden flex justify-between  border-l-8 border-green-700 rounded bg-white  text-white">
+              <!-- logo -->
+              <a href="dashboard.html" class="space-x-2 items-center flex mt-3 mb-3 ml-4">
+                  <!-- <img class="h-10 w-10 " src="/images/logo.png"> -->
+               
+              <span class="font-extrabold text-2xl text-green-700">TVET ADMIN</span>
+            </a>
+
+            <div class="flex">
+                <!-- menu button -->
+                <button class="focus:outline-none focus:bg-green-400 mobile-menu-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 self-center text-green-700 m-2 " fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                      </svg>
+                </button>
+            </div>
+            
+            
+        </div>
+
+        <!-- sidebar -->
+        <div class=" shadow-lg sidebar bg-green-800 text-blue-100 w-64 absolute md:relative inset-y-0 left-0 transform -translate-x-full md:translate-x-0 transition duration-300 ease-in-out">
+            <!-- logo -->
+            <div class="space-x-2 items-center mt-3">
+                <img class="h-24 w-56 text-white bg-white m-auto" src="/public/images/logo.png">
+             
+              <p class="font-extrabold text-2xl text-center pt-2 text-gray-100 pl-2">TVET ADMIN</p>
+          </div>
+
+            <!-- nav -->
+            <nav class="mt-5 text-gray-100">
+                
+                <a href="dashboard.html" class="py-2 mx-3 px-2 flex hover:text-gray-800 hover:bg-yellow-500 transition duration-400">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                      </svg>
+                    <span class="px-4">Dashboard</span></a>
+                <hr class="mx-3">
+                <a href="assessment.html" class="flex mt-2 py-2 mx-3 px-2 hover:text-gray-800 hover:bg-yellow-500 transition duration-400">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M7 3a1 1 0 000 2h6a1 1 0 100-2H7zM4 7a1 1 0 011-1h10a1 1 0 110 2H5a1 1 0 01-1-1zM2 11a2 2 0 012-2h12a2 2 0 012 2v4a2 2 0 01-2 2H4a2 2 0 01-2-2v-4z" />
+                      </svg>
+                      <span class="px-4">Assessment</span></a>
+                <hr class="mx-3">
+                
+                <a href="assessors/assessors.html" class="flex mt-2  py-2 mx-3 px-2 hover:text-gray-800 hover:bg-yellow-500 transition duration-400">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5">
+                        <path d="M4.5 6.375a4.125 4.125 0 118.25 0 4.125 4.125 0 01-8.25 0zM14.25 8.625a3.375 3.375 0 116.75 0 3.375 3.375 0 01-6.75 0zM1.5 19.125a7.125 7.125 0 0114.25 0v.003l-.001.119a.75.75 0 01-.363.63 13.067 13.067 0 01-6.761 1.873c-2.472 0-4.786-.684-6.76-1.873a.75.75 0 01-.364-.63l-.001-.122zM17.25 19.128l-.001.144a2.25 2.25 0 01-.233.96 10.088 10.088 0 005.06-1.01.75.75 0 00.42-.643 4.875 4.875 0 00-6.957-4.611 8.586 8.586 0 011.71 5.157v.003z" />
+                      </svg>
+                      <span class="px-4">Q. Assessors</span></a>
+                <hr class="mx-3">
+                <a href="verifiers/verifiers.html" class="flex mt-2 py-2 mx-3 px-2 hover:text-gray-800 hover:bg-yellow-500 transition duration-400">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z" />
+                    </svg>
+                    <span class="px-4">Verifiers </span></a>
+                <hr class="mx-3">
+                <a href="schools.html" class="flex mt-2  py-2 mx-3 px-2 font-bold bg-yellow-500 text-gray-800  hover:text-gray-800 hover:bg-yellow-500 transition duration-400">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5">
+                        <path d="M11.584 2.376a.75.75 0 01.832 0l9 6a.75.75 0 11-.832 1.248L12 3.901 3.416 9.624a.75.75 0 01-.832-1.248l9-6z" />
+                        <path fill-rule="evenodd" d="M20.25 10.332v9.918H21a.75.75 0 010 1.5H3a.75.75 0 010-1.5h.75v-9.918a.75.75 0 01.634-.74A49.109 49.109 0 0112 9c2.59 0 5.134.202 7.616.592a.75.75 0 01.634.74zm-7.5 2.418a.75.75 0 00-1.5 0v6.75a.75.75 0 001.5 0v-6.75zm3-.75a.75.75 0 01.75.75v6.75a.75.75 0 01-1.5 0v-6.75a.75.75 0 01.75-.75zM9 12.75a.75.75 0 00-1.5 0v6.75a.75.75 0 001.5 0v-6.75z" clip-rule="evenodd" />
+                        <path d="M12 7.875a1.125 1.125 0 100-2.25 1.125 1.125 0 000 2.25z" />
+                      </svg>
+                    <span class="px-4">TVETS </span></a>
+                <hr class="mx-3">
+                <a href="password_reset.html" class="flex mt-2 py-2 mx-3 px-2 hover:text-gray-800 hover:bg-yellow-500 transition duration-400 ">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5">
+                        <path fill-rule="evenodd" d="M12 1.5a5.25 5.25 0 00-5.25 5.25v3a3 3 0 00-3 3v6.75a3 3 0 003 3h10.5a3 3 0 003-3v-6.75a3 3 0 00-3-3v-3c0-2.9-2.35-5.25-5.25-5.25zm3.75 8.25v-3a3.75 3.75 0 10-7.5 0v3h7.5z" clip-rule="evenodd" />
+                      </svg>
+                      <span class="px-4">Password reset</span>
+                    </a>
+                <hr class="mx-3">
+                <a href="login.html" class="flex  mt-2  py-2 mx-3 px-2 hover:text-gray-800 hover:bg-yellow-500 transition duration-400">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1" />
+                      </svg> 
+                    <span class="px-4">Logout</span>
+                </a>
+                <hr class="mx-3">
+            </nav>
+        </div>
+        <!-- end sidebar -->
+
+        <!-- Main content here -->
+        <div class="flex-1 p-10 text-2xl font-bold">
+
+            <!-- Search bar and notification box -->
+            <div class="rounded-xl py-4 px-5 bg-white lg:flex justify-between shadow-lg">
+                <div class="my-3">
+                    <h1 class="text-green-600 ml-3 lg:text-2xl text-xl">Training Provider (ABC 1) Assessment</h1>
+                </div>
+                <form class="">
+                    <input type="text" placeholder="Search here" class="focus:outline-none focus:bg-green-100 rounded-3xl bg-gray-100 text-sm font-thin md:px-8 pl-2 py-3 mb-3">
+                    <button type="submit" class="self-center rounded-xl lg:p-2 p-1 ml-0 mt-3 focus:outline-none hover:bg-green-500 transition duration-200 bg-green-600 text-white">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 hidden lg:block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                        </svg>  
+                        <span class="inline lg:hidden text-base">Search</span>  
+                    </button>
+                </form>
+            </div>
+            <!--end Search bar and notification box -->
+        
+         <!-- Content here -->
+         <div class="p-4 bg-white mt-5 rounded-lg space-y-3">
+            <div class="text-base font-normal">
+                <p class="text-xl font-bold ml-2">Student Assessment</p>
+                <div class="shadow-2xl border border-green-500 rounded-lg lg:w-2/3 p-2">
+
+                    <div class="grid lg:grid-cols-7 gap-1 border-b p-2">
+                        <p class="p-2  col-span-2 ">Date Issued: </p>
+                        <p class="p-2  col-span-3 bg-gray-200 rounded">10-02-2022</p>
+                    </div>
+
+                    <div class="grid lg:grid-cols-7 gap-1 border-b p-2">
+                        <p class="p-2  col-span-2 ">Total: </p>
+                        <p class="p-2  col-span-3 bg-gray-200 rounded">5000</p>
+                    </div>
+
+                    <div class="grid lg:grid-cols-7 gap-1 border-b p-2">
+                        <p class="p-2  col-span-2 ">Assessed: </p>
+                        <p class="p-2  col-span-3 bg-gray-200 rounded">2343</p>
+                    </div>
+
+                    <div class="grid lg:grid-cols-7 gap-1 border-b p-2">
+                        <p class="p-2  col-span-2 ">Score: </p>
+                        <p class="p-2  col-span-3 bg-gray-200 rounded">80%</p>
+                    </div>
+
+                    <div class="grid lg:grid-cols-7 gap-1 p-2">
+                        <p class="p-2  col-span-2 ">Comment: </p>
+                        <p class="p-2  col-span-3 bg-gray-200 rounded">Lorem, ipsum dolor sit amet laudantium velit accusamus asperiores officiis molestias neque commodi in earum./p>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <div class="text-base font-normal pt-10">
+                <p class="text-xl font-bold ml-2">Facilitators Assessment</p>
+                <div class="shadow-2xl border border-green-500 rounded-lg lg:w-2/3 p-2">
+
+                    <div class="grid lg:grid-cols-7 gap-1 border-b p-2">
+                        <p class="p-2  col-span-2 ">Date Issued: </p>
+                        <p class="p-2  col-span-3 bg-gray-200 rounded">10-02-2022</p>
+                    </div>
+
+                    <div class="grid lg:grid-cols-7 gap-1 border-b p-2">
+                        <p class="p-2  col-span-2 ">Total: </p>
+                        <p class="p-2  col-span-3 bg-gray-200 rounded">5000</p>
+                    </div>
+
+                    <div class="grid lg:grid-cols-7 gap-1 border-b p-2">
+                        <p class="p-2  col-span-2 ">Assessed: </p>
+                        <p class="p-2  col-span-3 bg-gray-200 rounded">2343</p>
+                    </div>
+
+                    <div class="grid lg:grid-cols-7 gap-1 border-b p-2">
+                        <p class="p-2  col-span-2 ">Score: </p>
+                        <p class="p-2  col-span-3 bg-gray-200 rounded">80%</p>
+                    </div>
+
+                    <div class="grid lg:grid-cols-7 gap-1 p-2">
+                        <p class="p-2  col-span-2 ">Comment: </p>
+                        <p class="p-2  col-span-3 bg-gray-200 rounded">Lorem, ipsum dolor sit amet laudantium velit accusamus asperiores officiis molestias neque commodi in earum./p>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="text-base font-normal pt-10">
+                <p class="text-xl font-bold ml-2">Quality compliances and assurance report</p>
+                <div class="shadow-2xl border border-green-500 rounded-lg lg:w-2/3 p-2">
+                    <div class="grid lg:grid-cols-7 gap-1 border-b p-2">
+                        <p class="p-2  col-span-2 ">Date Issued: </p>
+                        <p class="p-2  col-span-3 bg-gray-200 rounded">10-02-2022</p>
+                    </div>
+
+                    <div class="grid lg:grid-cols-7 gap-1 border-b p-2">
+                        <p class="p-2  col-span-2 ">Score: </p>
+                        <p class="p-2  col-span-3 bg-gray-200 rounded">80%</p>
+                    </div>
+
+                    <div class="grid lg:grid-cols-7 gap-1 p-2">
+                        <p class="p-2  col-span-2 ">Comment: </p>
+                        <p class="p-2  col-span-3 bg-gray-200 rounded">Lorem, ipsum dolor sit amet laudantium velit accusamus asperiores officiis molestias neque commodi in earum./p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- end Content here -->
+        </div>
+    <!-- end Main content here -->
+
+
+        
+    </div>
+   
+    <script src="/public/js/script.js"></script>
+   
+</body>
+</html>

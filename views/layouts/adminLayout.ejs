@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/images/logo.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="/css.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet">
+    <title><%= title %> </title>
+</head>
+<body style="font-family: 'Roboto', sans-serif;" class="bg-gray-100">
+    <div class="relative min-h-screen md:flex">
+        <!-- mobile menu bar -->
+        <div class="md:hidden flex justify-between  border-l-8 defaultBorderColor rounded bg-white  text-white">
+              <!-- logo -->
+              <a href="/admin/dashboard" class="space-x-2 items-center flex mt-3 mb-3 ml-4">
+                  <!-- <img class="h-10 w-10 " src="/images/logo.png"> -->
+               
+              <span class="font-extrabold text-2xl textColor">CSI ADMIN</span>
+            </a>
+
+            <div class="flex">
+                <!-- menu button -->
+                <button class="focus:outline-none focus:bg-gray-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 self-center textColor m-2 " fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                      </svg>
+                </button>
+            </div>
+            
+            
+        </div>
+
+        <%- include ('../partials/sidebar') %> 
+
+        <%- body %> 
+        
+    </div>
+   
+    <footer class=" border py-5 text-sm bg-white shadow-lg border-b-8 defaultBorderColor">
+        <div class="text-center font-medium ">
+            <p>&copy; Copyright 2022 <a class="textColor hover:underline" href="#">CSI</a>. All rights reserved </p>
+        </div>
+    </footer>
+    
+    <script src="/js/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script>
+    
+</body>
+</html>

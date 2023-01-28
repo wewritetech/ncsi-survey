@@ -1,0 +1,83 @@
+<!-- Main content here -->
+<div class="flex-1 lg:p-10 p-2 text-2xl font-bold">
+
+    <!-- Search bar and notification box -->
+    <div class="rounded-xl py-4 px-5 3 defaultMidiumColor lg:flex justify-between shadow-lg">
+        <div class="my-3">
+            <h1 class="text-gray-100 ml-3 lg:text-2xl text-lg font-bold">Add New Question</h1>
+        </div>
+    </div>
+    <!--end Search bar and notification box -->
+
+    <!-- Content here -->
+    <div class="p-4 bg-white mt-5 rounded-lg text-base">
+
+        <form class="space-y-3">
+            <!-- Question Item -->
+            <div>
+                <p class="p-2">Question Title </p>
+                <input
+                    class="w-full col-span-3 border border-slate-300  rounded-md py-2 pl-3  shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 text-sm"
+                    type="text" name="question" placeholder="Question Title">
+            </div>
+
+            <hr class="mx-3">
+            <div class="grid lg:grid-cols-3 gap-10 py-5 mx-1">
+                <!-- Question Item -->
+                <div class="col-span-1">
+                    <p class="p-2">Response Type</p>
+                    <div class=" col-span-3 rounded space-y-1">
+                        <select
+                            class="border border-slate-300 w-full rounded-md py-2 pl-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 text-sm"
+                            name="radio">
+                            <option disabled selected>Radio</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Question Item -->
+                <div class="col-span-1">
+                    <p class="p-2">Select Section</p>
+                    <div class=" col-span-3 rounded space-y-1">
+                        <select
+                            class="border border-slate-300 w-full rounded-md py-2 pl-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 text-sm"
+                            name="radio">
+                            <option disabled selected>Section 1</option>
+                            <option>Section 2</option>
+                            <option>Section 3</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Question Item -->
+                <div class="col-span-1">
+                    <p class="p-2">Accept User Response</p>
+                    <select
+                        class="border border-slate-300 w-full rounded-md py-2 pl-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 text-sm"
+                        name="radio">
+                        <option selected>Do not accept</option>
+                        <option value="accept">Accept</option>
+                    </select>
+                </div>
+            </div>
+
+            <hr class="mx-3">
+
+            <!-- Question Item -->
+            <div class="py-5">
+                <p class="px-2">Response/Answers</p>
+                <p class="px-2 text-sm text-gray-500">Seperate each response with a semi-colon eg.</p>
+                <textarea
+                    class="w-full col-span-3 border border-slate-300  rounded-md py-2 pl-3  shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 text-sm"
+                    placeholder="eg. Answer1;Answer2;Answer3" name="response" id="" cols="30" rows="10"></textarea>
+            </div>
+
+            <div class="text-center">
+                <button class="p-1 px-4 defaultBtn text-white  rounded-3xl">Add New</button>
+            </div>
+        </form>
+    </div>
+    <!-- end Content here -->
+
+
+</div>

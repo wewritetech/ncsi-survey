@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="shortcut icon" href="/images/logo.png" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="/css.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <title>NCSI-Login</title>
+</head>
+<body style="font-family: 'Roboto', sans-serif;" class="bg-gray-100">
+    <% if (error) { %>
+        <div class="grid place-items-center">
+            <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 w-2/6 rounded relative text-center" role="alert">
+                <span class="block sm:inline text-center"><%= message %></span>
+              </div>
+        </div>
+    <% } %>
+    <div class="w-80 mx-auto my-20 bg-white shadow-lg rounded-xl">
+        <div class="bg-gray-200 defaultLightColor rounded-t-xl mb-4">
+            <!-- Logo and Company description -->
+            <div class="pt-4 pb-4">
+                <img class="h-24 w-24 border defaultBorderRadius bg-white m-auto" src="/images/logo.png"> 
+            </div>
+        </div>
+
+        <p class="text-center text-lg">NCSI <span class="font-bold textColor">ADMIN</span></p>
+        <p class="text-xl text-center">LOGIN</p>
+        <form method="post" action="/wewrite-admin/login" class="space-y-1 font-bold p-5">
+           
+            <div class="mt-4">
+                <label  for="login_name">Account name</label>
+                <input  type="email" name="email" id="email" placeholder="Enter email" class="focus:outline-none focus:bg-sky-100 bg-gray-100 w-full text-sm font-thin md:px-8 p-4" required>
+            </div>
+
+            <div class="pt-4">
+                <label for="password">Password </label>
+                <input  type="password" name="password" id="password" placeholder="Enter valid password" class="focus:outline-none focus:bg-sky-100 bg-gray-100 w-full text-sm font-thin md:px-8 p-4" required>
+            </div>
+           
+                   
+
+            <p class="text-center p-2"><button type="submit" class="font-bold p-3 rounded text-white defaultBtn">LOGIN</button></p>
+        </form>
+        <!-- <a href="#" class="text-center block text-green-700  font-bold hover:text-green-900">NCSI homepage</a> -->
+        <div class="pb-3 text-sm text-center px-2 ">
+            <p>© Nigeria Customer Service Index.</p>
+            <p> All Rights Reserved</p>
+            <p>Powered By: WeWrite Technologies</p>
+        </div>
+    </div>
+    
+</body>
+</html>
